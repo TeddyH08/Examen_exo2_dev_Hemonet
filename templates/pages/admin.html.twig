@@ -3,9 +3,56 @@
 {% block body %}
     <div class="container_utilisateurs">
         <h2 class="title_container">Liste des utilisateurs</h2>
+
+        <div class="container_cards_users">
+            <div class="card_user">
+                <img src="{{ asset("img/user.png") }}" class="user_img">
+
+                <div class="infos_user">
+                    <div class="user">
+                        <p class="nom">Nom</p>
+                        <p class="prenom">Prénom</p>
+                        <p class="mail">Adresse mail</p>
+                    </div>
+
+                    <div class="modif_user">
+                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                </div>
+            </div>
+
+            <a href="" class="add">
+                <p>+</p>
+            </a>
+        </div>
     </div>
 
     <div class="container_projets">
         <h2 class="title_container">Liste des projets</h2>
+
+        <div class="container_cards_proj">
+            <div class="card_project">
+                <img src="{{ asset("img/maquette.jpg") }}" class="proj_img">
+
+                <p class="title_proj">Maquette</p>
+
+                <div class="infos_proj">
+                    <div class="proj">
+                        <p>Créateur</p>
+                        <p>Date d'ajout</p>
+                    </div>
+
+                    <div class="modif_user">
+                        <i class="fa-solid fa-pen"></i>
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                </div>
+            </div>
+
+            <a href="" class="add">
+                <p>+</p>
+            </a>
+        </div>
     </div>
 {% endblock %}

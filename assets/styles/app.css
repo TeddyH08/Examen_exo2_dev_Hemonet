@@ -420,6 +420,99 @@ i {
     margin: 40px 0;
 }
 
+.container_cards_users {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: 20px 0;
+}
+
+.card_user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: #FFF6EB;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 75%;
+}
+
+.user_img {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.infos_user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.modif_user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 80%;
+}
+
+.modif_user i {
+    margin: 5px 0;
+}
+
+.container_cards_proj {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: 20px 0;
+}
+
+.card_project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: #FFF6EB;
+    padding-bottom: 10px;
+    font-size: 75%;
+    border-radius: 10px;
+}
+
+.proj_img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.title_proj {
+    font-size: 150%;
+    margin: 5px 0;
+}
+
+.infos_proj {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+
+.add {
+    background-color: #FFF6EB;
+    border-radius: 50%;
+    font-size: 400%;
+    padding: 0px 25px;
+    border: #FFF6EB solid 2px;
+}
+
 /* Hover */
 
 @media screen and (min-width: 1024px) {
@@ -434,6 +527,9 @@ i {
     }
     .connexion_redirect:hover {
         text-decoration: underline;
+    }
+    .add_user:hover {
+        border: #892C00 solid 2px;
     }
 }
 
