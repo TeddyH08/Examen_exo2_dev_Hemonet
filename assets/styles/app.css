@@ -411,6 +411,15 @@ i {
     margin: 40px 0;
 }
 
+.container_projets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
 /* Hover */
 
 @media screen and (min-width: 1024px) {
