@@ -5,20 +5,20 @@
         <h2 class="title_container">Liste des projets</h2>
 
         <div class="container_cards_projects">
-            {% for projet in projets %}
+            {# {% for projet in projets %} #}
                 <div class="cards_projects">
-                    <img src="{{ asset("img/" ~ projet.image) }}" class="card_img">
+                    <img src="" class="card_img">
 
-                    <h4 class="title_card">{{ projet.name }}</h4>
+                    <h4 class="title_card"></h4>
 
                     <div class="link_projects">
-                        <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a>
-                        {% if projet.github != null %}
-                            <a href="" target="_blank"><i class="fa-brands fa-github icone"></i></a>
-                        {% endif %}
+                        {# <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a> #}
+                        {# {% if projet.github != null %} #}
+                            {# <a href="{{ projet.github }}" target="_blank"><i class="fa-brands fa-github icone"></i></a> #}
+                        {# {% endif %} #}
                     </div>
                 </div>
-            {% endfor %}
+            {# {% endfor %} #}
         </div>
     </div>
 

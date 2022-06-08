@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ProjetsRepository;
+use App\Repository\ProjetsexamRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ProjetsRepository::class)]
-class Projets
+#[ORM\Entity(repositoryClass: ProjetsexamRepository::class)]
+class Projetsexam
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,10 +20,10 @@ class Projets
     private $image;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $github;
+    private $link;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $link;
+    private $github;
 
     public function getId(): ?int
     {
@@ -54,18 +54,6 @@ class Projets
         return $this;
     }
 
-    public function getGithub(): ?string
-    {
-        return $this->github;
-    }
-
-    public function setGithub(string $github): self
-    {
-        $this->github = $github;
-
-        return $this;
-    }
-
     public function getLink(): ?string
     {
         return $this->link;
@@ -74,6 +62,18 @@ class Projets
     public function setLink(string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getGithub(): ?string
+    {
+        return $this->github;
+    }
+
+    public function setGithub(string $github): self
+    {
+        $this->github = $github;
 
         return $this;
     }

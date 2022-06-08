@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Projets;
+use App\Entity\Projetsexam;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Projets>
+ * @extends ServiceEntityRepository<Projetsexam>
  *
- * @method Projets|null find($id, $lockMode = null, $lockVersion = null)
- * @method Projets|null findOneBy(array $criteria, array $orderBy = null)
- * @method Projets[]    findAll()
- * @method Projets[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Projetsexam|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Projetsexam|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Projetsexam[]    findAll()
+ * @method Projetsexam[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ProjetsRepository extends ServiceEntityRepository
+class ProjetsexamRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Projets::class);
+        parent::__construct($registry, Projetsexam::class);
     }
 
-    public function add(Projets $entity, bool $flush = false): void
+    public function add(Projetsexam $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class ProjetsRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Projets $entity, bool $flush = false): void
+    public function remove(Projetsexam $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class ProjetsRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Projets[] Returns an array of Projets objects
+//     * @return Projetsexam[] Returns an array of Projetsexam objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class ProjetsRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Projets
+//    public function findOneBySomeField($value): ?Projetsexam
 //    {
 //        return $this->createQueryBuilder('p')
 //            ->andWhere('p.exampleField = :val')
