@@ -220,14 +220,14 @@ form {
 }
 
 form input {
-    width: 90%;
+    width: 100%;
     font-size: 110%;
     border: #892C00 solid 0.5px;
     border-radius: 5px;
 }
 
 form textarea {
-    width: 90%;
+    width: 100%;
     font-size: 110%;
     border: #892C00 solid 0.5px;
     border-radius: 5px;
@@ -379,6 +379,36 @@ i {
     z-index: 100;
     display: none;
     transition: all 0.3s ease;
+}
+
+/* page de connexion */
+
+.connexion_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.connexion_form {
+    margin: 40px 0;
+    border: 1px solid #892C00;
+    background-color: #FFF6EB;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Page admin */
+
+.container_utilisateurs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
 }
 
 /* Hover */

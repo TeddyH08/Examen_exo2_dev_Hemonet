@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="connexion_container">
+        <h2 class="title_container">Connexion</h2>
+
+        <form action="" class="connexion_form">
+            <label for="mail">Adresse mail</label>
+            <input type="mail" name="mail">
+
+            <label for="mdp">Mot de passe</label>
+            <input type="password" name="mdp">
+
+            <input type="submit" value="Connexion" class="submit">
+        </form>
+    </div>
+{% endblock %}
