@@ -5,44 +5,20 @@
         <h2 class="title_container">Liste des projets</h2>
 
         <div class="container_cards_projects">
-            <div class="cards_projects">
-                <img src="{{ asset("img/maquette.jpg") }}" class="card_img">
+            {% for projet in projets %}
+                <div class="cards_projects">
+                    <img src="{{ asset("img/" ~ projet.image) }}" class="card_img">
 
-                <h4 class="title_card">Maquette du One page</h4>
+                    <h4 class="title_card">{{ projet.name }}</h4>
 
-                <div class="link_projects">
-                    <a href="https://miro.com/app/board/uXjVOvdKyhQ=/" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                    <div class="link_projects">
+                        <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                        {% if projet.github != null %}
+                            <a href="" target="_blank"><i class="fa-brands fa-github icone"></i></a>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-
-            <div class="cards_projects">
-                <img src="{{ asset("img/exo1.jpg") }}" class="card_img">
-
-                <h4 class="title_card">One page sans back</h4>
-
-                <div class="link_projects">
-                    <a href="" target="_blank"><i class="fa-solid fa-link icone"></i></a>
-                    <a href="https://github.com/TeddyH08/Examen_dev_Hemonet" target="_blank"><i class="fa-brands fa-github icone"></i></a>
-                </div>
-            </div>
-
-            <div class="cards_projects">
-                <h4 class="title_card">One page avec back</h4>
-
-                <div class="link_projects">
-                    <a href="" target="_blank"><i class="fa-solid fa-link icone"></i></a>
-                    <a href="" target="_blank"><i class="fa-brands fa-github icone"></i></a>
-                </div>
-            </div>
-
-            <div class="cards_projects">
-                <h4 class="title_card">Exercices supplémentaires</h4>
-
-                <div class="link_projects">
-                    <a href="" target="_blank"><i class="fa-solid fa-link icone"></i></a>
-                    <a href="" target="_blank"><i class="fa-brands fa-github icone"></i></a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
