@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Examens{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +16,103 @@
         {% endblock %}
     </head>
     <body>
+        {% block navbar %}
+        
+        {% endblock %}
+
+        <header>
+            <nav class="navbar">
+                <div id="nav" class="respon">
+                    <div class="menu">
+                        <div class="left_nav">
+                            <div class="categorie dropdown">
+                                <a href="{{ path('index') }}">Accueil</a>
+                            </div>
+
+                            <div class="categorie dropdown">
+                                <a href="{{ path('index') }}#projets">Liste des projets</a>
+                            </div>
+                        </div>
+
+                        <div class="right_nav">
+                            <div class="categorie dropdown">
+                                <a href="{{ path('index') }}#contact" class="contact">Contactez-nous</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="burger" id="toggle-button">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container_top_page">
+            <img src="{{ asset("img/bg_modif.jpg") }}" class="bg_top_page">
+
+            <div class="color_cache"></div>
+
+            <h1 class="title">Exercice d'examen 1</h1>
+        </div>
+
         {% block body %}{% endblock %}
+
+
+        <a href="#" class="go_top"><i class="fa-solid fa-angle-up"></i></a>
+
+        {% block footer %}
+        {% endblock %}
+        <footer>
+            <div class="reseaux_container">
+                <h3>Retrouvez-nous aussi sur :</h3>
+                <div class="reseaux">
+                    <a href="" class="fb">
+                        <i class="fa-brands fa-facebook-square"></i>
+                        Facebook
+                    </a>
+
+                    <a href="" class="tw">
+                        <i class="fa-brands fa-twitter-square"></i>
+                        Twitter
+                    </a>
+
+                    <a href="" class="git">
+                        <i class="fa-brands fa-github-square"></i>
+                        Github
+                    </a>
+
+                    <a href="" class="ld">
+                        <i class="fa-brands fa-linkedin"></i>
+                        Linkedin
+                    </a>
+                </div>
+            </div>
+
+            <div class="sepa"></div>
+
+            <div class="contact_footer">
+                <div class="maitrise_fcontainer">
+                    <h3>HEMONET Teddy</h3>
+                    <p>Examen d'après stage</p>
+                    <p>Regroupement de projets</p>
+                </div>
+
+                <div class="contact_fcontainer">
+                    <h3>Contactez-nous</h3>
+                    <p>Email : examen@gmail.com</p>
+                    <p>Tel : 07 08 09 10 11</p>
+                </div>
+            </div>
+
+            <div class="sepa"></div>
+
+            <div class="copy">
+                <p>© 2022 Copyright: HEMONET Teddy | Tous droits Reservés | Mentions légales | Politique de confidentialité | CGV</p>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     </body>
 </html>

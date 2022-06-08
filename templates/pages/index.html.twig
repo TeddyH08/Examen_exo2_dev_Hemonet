@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container_list_project" id="projets">
+        <h2 class="title_container">Liste des projets</h2>
+
+        <div class="container_cards_projects">
+            <div class="cards_projects">
+                <img src="{{ asset("img/maquette.jpg") }}" class="card_img">
+
+                <h4 class="title_card">Maquette du One page</h4>
+
+                <div class="link_projects">
+                    <a href="https://miro.com/app/board/uXjVOvdKyhQ=/" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                </div>
+            </div>
+
+            <div class="cards_projects">
+                <img src="{{ asset("img/exo1.jpg") }}" class="card_img">
+
+                <h4 class="title_card">One page sans back</h4>
+
+                <div class="link_projects">
+                    <a href="" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                    <a href="https://github.com/TeddyH08/Examen_dev_Hemonet" target="_blank"><i class="fa-brands fa-github icone"></i></a>
+                </div>
+            </div>
+
+            <div class="cards_projects">
+                <h4 class="title_card">One page avec back</h4>
+
+                <div class="link_projects">
+                    <a href="" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-github icone"></i></a>
+                </div>
+            </div>
+
+            <div class="cards_projects">
+                <h4 class="title_card">Exercices supplémentaires</h4>
+
+                <div class="link_projects">
+                    <a href="" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-github icone"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_contact" id="contact">
+        <h2 class="title_container">Contactez-nous</h2>
+
+        <div class="contact_form">
+            <form action="">
+                <div class="card_form">
+                    <label for="nom">Nom</label>
+                    <input type="text" name="nom">
+                </div>
+
+                <div class="card_form">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom">
+                </div>
+
+                <div class="card_form">
+                    <label for="mail">Adresse mail</label>
+                    <input type="mail" name="mail">
+                </div>
+
+                <div class="card_form">
+                    <label for="message">Message</label>
+                    <textarea type="text" name="message"></textarea>
+                </div>
+
+                <input type="submit" value="Envoyer" class="submit">
+            </form>
+
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82442.03285589021!2d4.660373792476917!3d49.78016869279266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ea0de06e140c27%3A0x40a5fb99a3f7a80!2s08000%20Charleville-M%C3%A9zi%C3%A8res!5e0!3m2!1sfr!2sfr!4v1654610473805!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}

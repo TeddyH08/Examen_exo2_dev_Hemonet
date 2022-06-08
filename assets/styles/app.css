@@ -1,3 +1,464 @@
+@font-face {
+    font-family: 'RadioCanada';
+    src: url("../../public/fonts/RadioCanada-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'RadioCanada_big';
+    src: url("../../public/fonts/RadioCanada-Bold.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+    font-family: 'RadioCanada';
+    font-size: 130%;
+    background-color: white;
+    color: #892C00;
+}
+
+a {
+    text-decoration: none;
+    color: #892C00;
+}
+
+/* Navbar */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    color: #892C00;
+}
+
+.respon {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+    background-color: #FFAD00;
+    font-size: 90%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    color: #892C00;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact {
+    background-color: #892C00;
+    color: #FFAD00;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.categorie {
+    display: block;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 15px;
+    cursor: pointer;
+    transition: 500ms ease;
+    font-size: 90%;
+    color: #892C00;
+}
+
+.burger {
+    display: none;
+    color: #892C00;
+}
+
+
+/* Top page */
+
+.container_top_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.bg_top_page {
+    width: 100%;
+    position: relative;
+}
+
+.color_cache {
+    width: 100%;
+    background-color: #f3c258b2;
+    height: 26vw;
+    position: absolute;
+}
+
+.title {
+    position: absolute;
+    font-size: 350%;
+    font-family: 'RadioCanada_big';
+}
+
+/* Liste des projets */
+
+.title_container {
+    font-size: 220%;
+}
+
+.container_list_project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.container_cards_projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+    margin-top: 20px;
+}
+
+.cards_projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    width: 25%;
+    margin: 10px 0;
+    background-color: #FFF6EB;
+    border-radius: 10px;
+}
+
+.title_card {
+    font-size: 110%;
+}
+
+.card_img {
+    width: 100%;
+}
+
+.link_projects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 75%;
+}
+
+.icone {
+    border-radius: 50%;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Contact */
+
+.container_contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    background-color: #FFF6EB;
+    padding: 20px 0;
+    color: #892C00;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+form input {
+    width: 90%;
+    font-size: 110%;
+    border: #892C00 solid 0.5px;
+    border-radius: 5px;
+}
+
+form textarea {
+    width: 90%;
+    font-size: 110%;
+    border: #892C00 solid 0.5px;
+    border-radius: 5px;
+}
+
+.submit {
+    width: 35% !important;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 100% !important;
+    border: #892C00 solid 0.5px;
+    background-color: #892C00;
+    color: #FFAD00;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.map {
+    width: 30%;
+}
+
+iframe {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFAD00;
+    padding: 20px 0;
+    color: #892C00;
+    font-size: 60%;
+}
+
+.sepa {
+    width: 95%;
+    height: 1px;
+    background-color: #892C00;
+    border-radius: 50%;
+}
+
+.reseaux_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    font-size: 150%;
+    margin-bottom: 10px;
+}
+
+.reseaux {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+i {
+    font-size: 150%;
+}
+
+.fb {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tw {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.git {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ld {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 80%;
+    font-size: 120%;
+    margin: 15px 0;
+}
+
+.contact_footer p {
+    text-align: center;
+}
+
+.maitrise_fcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 45%;
+}
+
+.contact_fcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 45%;
+}
+
+.copy {
+    margin: 10px 0;
+}
+
+/* back to top */
+
+.go_top {
+    position: fixed;
+    background-color: #892C00;
+    color: #FFAD00;
+    padding: 5px 10px;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+
+@media screen and (min-width: 1024px) {
+    .submit:hover {
+        background-color: #ba3b01;
+    }
+    .go_top:hover {
+        background-color: #ba3b01;
+    }
+    .icone:hover {
+        background-color: #FFAD00;
+    }
+    .connexion_redirect:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Responsive */
+
+
+@media screen and (min-width: 721px) and (max-width: 1025px) {
+    nav {
+        justify-content: right;
+    }
+    .burger {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        grid-column-start: 3;
+        margin-right: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        font-size: 100%;
+    }
+    .active {
+        position: absolute;
+        display: flex !important;
+        z-index: 10;
+        top: 100%;
+        left: 0;
+        background-color: #ffae00a7;
+        backdrop-filter: blur(4px);
+        width: 100%;
+        height: 100px;
+        margin: 0;
+        padding: 0;
+    }
+    .respon{
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+    .cards_projects {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .cards_projects {
+        width: 50% !important;
+        margin: 30px !important;
+    }
+    .contact_form {
+        flex-direction: column !important;
+    }
+    form {
+        width: 50% !important;
+        margin-bottom: 30px;
+    }
+    .map {
+        width: 50% !important;
+        margin-top: 30px;
+    }
 }
