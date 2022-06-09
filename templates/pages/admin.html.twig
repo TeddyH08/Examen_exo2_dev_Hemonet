@@ -32,28 +32,32 @@
         <h2 class="title_container">Liste des projets</h2>
 
         <div class="container_cards_proj">
-            <div class="card_project">
-                <img src="{{ asset("img/maquette.jpg") }}" class="proj_img">
+            {% for projet in projets %}
+                <div class="card_project">
+                    <img src="{{ asset('img/' ~ projet.image) }}" class="proj_img">
 
-                <p class="title_proj">Maquette</p>
+                    <p class="title_proj">{{ projet.name }}</p>
 
-                <div class="infos_proj">
-                    <div class="proj">
-                        <p>Créateur</p>
-                        <p>Date d'ajout</p>
+                    <div class="infos_proj">
+                        <div class="proj">
+                            <p>Créateur</p>
+                            <p>Date d'ajout</p>
 
-                        <div class="link_proj">
-                            <a href="" target="_blank"><i class="fa-solid fa-link icone"></i></a>
-                            <a href="" target="_blank"><i class="fa-brands fa-github icone"></i></a>
+                            <div class="link_proj">
+                                <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                                {% if projet.github != null %}
+                                    <a href="{{ projet.github }}" target="_blank"><i class="fa-brands fa-github icone"></i></a>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="modif_user">
+                            <i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-trash"></i>
                         </div>
                     </div>
-
-                    <div class="modif_user">
-                        <i class="fa-solid fa-pen"></i>
-                        <i class="fa-solid fa-trash"></i>
-                    </div>
                 </div>
-            </div>
+            {% endfor %}
 
             <a href="" class="add">
                 <p>+</p>
