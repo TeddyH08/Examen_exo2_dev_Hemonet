@@ -3,6 +3,7 @@
     namespace App\Controller;
 
     use App\Repository\ProjetsexamRepository;
+    use App\Repository\AdminRepository;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
@@ -10,12 +11,15 @@
     class AdminController extends AbstractController {
 
         /**
-         * @var ProjetsRepository
+         * @var ProjetsexamRepository
+         * @var AdminRepository
          */
-        private $repository;
+        private $projetsrepository;
+        private $adminrepository;
 
-        public function __construct(ProjetsexamRepository $repository){
-            $this->repository = $repository;
+        public function __construct(ProjetsexamRepository $projetsrepository, AdminRepository $adminrepository){
+            $this->projetsrepository = $projetsrepository;
+            $this->adminrepository = $adminrepository;
         }
 
         /**
@@ -23,10 +27,12 @@
          * @return Response
          */
         public function index(): Response {
-            $projets = $this->repository->findAll();
+            $projets = $this->projetsrepository->findAll();
+            $users = $this->adminrepository->findAll();
 
             return $this->render('pages/admin.html.twig', [
-                "projets" => $projets
+                "projets" => $projets,
+                "users" => $users
             ]);
         }
     }

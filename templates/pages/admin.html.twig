@@ -5,22 +5,24 @@
         <h2 class="title_container">Liste des utilisateurs</h2>
 
         <div class="container_cards_users">
-            <div class="card_user">
-                <img src="{{ asset("img/user.png") }}" class="user_img">
+            {% for user in users %}
+                <div class="card_user">
+                    <img src="{{ asset('img/' ~ user.photo) }}" class="user_img">
 
-                <div class="infos_user">
-                    <div class="user">
-                        <p class="nom">Nom</p>
-                        <p class="prenom">Prénom</p>
-                        <p class="mail">Adresse mail</p>
-                    </div>
+                    <div class="infos_user">
+                        <div class="user">
+                            <p class="nom">{{ user.nom }}</p>
+                            <p class="prenom">{{ user.prenom }}</p>
+                            <p class="mail">{{ user.email }}</p>
+                        </div>
 
-                    <div class="modif_user">
-                        <i class="fa-solid fa-pen"></i>
-                        <i class="fa-solid fa-trash"></i>
+                        <div class="modif_user">
+                            <i class="fa-solid fa-pen"></i>
+                            <i class="fa-solid fa-trash"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
 
             <a href="" class="add">
                 <p>+</p>
@@ -44,7 +46,10 @@
                             <p>Date d'ajout</p>
 
                             <div class="link_proj">
-                                <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                                {% if projet.link != null %}
+                                    <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                                {% endif %}
+
                                 {% if projet.github != null %}
                                     <a href="{{ projet.github }}" target="_blank"><i class="fa-brands fa-github icone"></i></a>
                                 {% endif %}

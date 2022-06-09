@@ -12,7 +12,10 @@
                     <h4 class="title_card">{{ projet.name }}</h4>
 
                     <div class="link_projects">
-                        <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                        {% if projet.link != null %}
+                            <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a>
+                        {% endif %}
+                        
                         {% if projet.github != null %}
                             <a href="{{ projet.github }}" target="_blank"><i class="fa-brands fa-github icone"></i></a>
                         {% endif %}

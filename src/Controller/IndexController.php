@@ -10,7 +10,7 @@
     class IndexController extends AbstractController {
 
         /**
-         * @var ProjetsRepository
+         * @var ProjetsexamRepository
          */
         private $repository;
 

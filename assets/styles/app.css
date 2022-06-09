@@ -528,7 +528,7 @@ i {
     .connexion_redirect:hover {
         text-decoration: underline;
     }
-    .add_user:hover {
+    .add:hover {
         border: #892C00 solid 2px;
     }
 }
