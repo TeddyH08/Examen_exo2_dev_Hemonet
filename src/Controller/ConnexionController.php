@@ -7,7 +7,7 @@
 
     class ConnexionController extends AbstractController {
         /**
-         * @Route("/connexion", name="connexion")
+         * @Route("/connexion", name="connexion.index", methods={"GET","POST"})
          * @return Response
          */
         public function index(): Response {

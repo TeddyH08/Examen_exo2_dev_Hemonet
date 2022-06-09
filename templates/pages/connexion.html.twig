@@ -4,12 +4,12 @@
     <div class="connexion_container">
         <h2 class="title_container">Connexion</h2>
 
-        <form action="" class="connexion_form">
-            <label for="mail">Adresse mail</label>
-            <input type="mail" name="mail">
+        <form action="{{ path('connexion.index') }}" class="connexion_form" method="post">
+            <label for="username">Adresse mail</label>
+            <input type="email" name="_username" id="username">
 
-            <label for="mdp">Mot de passe</label>
-            <input type="password" name="mdp">
+            <label for="password">Mot de passe</label>
+            <input type="password" name="_password" id="password">
 
             <input type="submit" value="Connexion" class="submit">
         </form>
