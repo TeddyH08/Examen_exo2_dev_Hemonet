@@ -2,6 +2,12 @@
 
 {% block body %}
     <div class="container_utilisateurs">
+        {% for message in app.flashes('success') %}
+            <div class="success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
         <h2 class="title_container">Liste des utilisateurs</h2>
 
         <div class="container_cards_users">
@@ -24,7 +30,7 @@
                 </div>
             {% endfor %}
 
-            <a href="" class="add">
+            <a href="{{ path('add_user') }}" class="add">
                 <p>+</p>
             </a>
         </div>
