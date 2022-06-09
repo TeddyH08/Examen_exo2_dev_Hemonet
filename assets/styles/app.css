@@ -423,6 +423,7 @@ i {
 .container_cards_users {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     width: 90%;
@@ -439,6 +440,7 @@ i {
     padding: 10px;
     border-radius: 10px;
     font-size: 75%;
+    margin: 10px 0;
 }
 
 .user_img {
@@ -511,6 +513,32 @@ i {
     font-size: 400%;
     padding: 0px 25px;
     border: #FFF6EB solid 2px;
+}
+
+.form_ins {
+    width: 100%;
+}
+
+/* Ajout */
+
+.success {
+    background-color: lightgreen;
+    border: 1px solid green;
+    color: green;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn_return {
+    margin: 20px;
+}
+
+.return {
+    background-color: #892C00;
+    color: #FFAD00;
+    padding: 10px;
+    width: 20%;
+    border-radius: 5px;
 }
 
 /* Hover */

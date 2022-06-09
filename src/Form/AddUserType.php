@@ -55,12 +55,12 @@ class AddUserType extends AbstractType
                 'invalid_message' => "Les mots de passe ne  correspondent pas"
             ])
             ->add('photo', TextType::class, [
-                'label' => "Image de profil",
+                'label' => "Image de profil (user.png par défaut)",
                 'data' => "user.png"
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [
-                    'class' => 'form_content_submit'
+                    'class' => 'submit'
                 ]
             ])
         ;

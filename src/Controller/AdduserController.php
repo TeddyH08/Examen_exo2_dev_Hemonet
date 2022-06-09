@@ -23,7 +23,9 @@
             ): Response 
         {
             $users = new Admin();
-            $form = $this->createForm(AddUserType::class, $users);
+            $users->setRoles(['ROLE_ADMIN']);
+
+            $form = $this->createForm(AddUserType::class, $users, ['attr' => ['class' => 'form_ins']]);
 
             $form->handleRequest($request);
             if($form->isSubmitted() && $form->isValid()) {

@@ -10,7 +10,14 @@
          * @Route("/connexion", name="connexion.index", methods={"GET","POST"})
          * @return Response
          */
-        public function index(): Response {
+        public function login(): Response {
             return $this->render('pages/connexion.html.twig');
+        }
+
+        /**
+         * @Route("/deconnexion", name="connexion.logout")
+         */
+        public function logout() {
+            //Nothing to do here
         }
     }
