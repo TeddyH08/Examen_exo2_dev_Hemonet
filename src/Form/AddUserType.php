@@ -61,7 +61,8 @@ class AddUserType extends AbstractType
             ->add('submit', SubmitType::class, [
                 'attr' => [
                     'class' => 'submit'
-                ]
+                ],
+                'label' => 'Ajouter'
             ])
         ;
     }

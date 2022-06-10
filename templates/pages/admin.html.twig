@@ -23,8 +23,8 @@
                         </div>
 
                         <div class="modif_user">
-                            <a href="{{ path('edit_user') }}"><i class="fa-solid fa-pen icone"></i></a> 
-                            <a href=""><i class="fa-solid fa-trash icone"></i></a> 
+                            <a href="{{ path('edit_user', { id: user.id }) }}"><i class="fa-solid fa-pen icone"></i></a> 
+                            <a href="{{ path('delete_user', { id: user.id }) }}"><i class="fa-solid fa-trash icone"></i></a> 
                         </div>
                     </div>
                 </div>
