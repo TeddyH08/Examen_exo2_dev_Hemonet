@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="connexion_container">
+        <h2 class="title_container">Modification d'un projet</h2>
+
+        <div class="connexion_form">
+            {{ form(form) }}
+        </div>
+    </div>
+
+    <div class="btn_return">
+        <a href="{{ path('admin') }}" class="return">Retour</a>
+    </div>
+{% endblock %}

@@ -587,7 +587,7 @@ i {
 /* Responsive */
 
 
-@media screen and (min-width: 721px) and (max-width: 1025px) {
+@media screen and (max-width: 1025px) {
     nav {
         justify-content: right;
     }
