@@ -233,6 +233,13 @@ form textarea {
     border-radius: 5px;
 }
 
+form select {
+    width: 100%;
+    font-size: 110%;
+    border: #892C00 solid 0.5px;
+    border-radius: 5px;
+}
+
 .submit {
     width: 35% !important;
     margin-top: 25px;

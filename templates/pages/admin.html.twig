@@ -8,6 +8,18 @@
             </div>
         {% endfor %}
 
+        {% for message in app.flashes('update') %}
+            <div class="update">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('delete') %}
+            <div class="delete">
+                {{ message }}
+            </div>
+        {% endfor %}
+
         <h2 class="title_container">Liste des utilisateurs</h2>
 
         <div class="container_cards_users">
@@ -48,29 +60,29 @@
 
                     <div class="infos_proj">
                         <div class="proj">
-                            <p>Créateur</p>
-                            <p>Date d'ajout</p>
+                            <p>{{ projet.admin.email }}</p>
+                            <p>Créé le {{ projet.createdat|date("d/m/Y") }}</p>
 
                             <div class="link_proj">
-                                {% if projet.link != null %}
+                                {% if projet.link != null and projet.link != '#' %}
                                     <a href="{{ projet.link }}" target="_blank"><i class="fa-solid fa-link icone"></i></a>
                                 {% endif %}
 
-                                {% if projet.github != null %}
+                                {% if projet.github != null and projet.github != '#'  %}
                                     <a href="{{ projet.github }}" target="_blank"><i class="fa-brands fa-github icone"></i></a>
                                 {% endif %}
                             </div>
                         </div>
 
                         <div class="modif_user">
-                            <i class="fa-solid fa-pen"></i>
-                            <i class="fa-solid fa-trash"></i>
+                            <a href=""><i class="fa-solid fa-pen icone"></i></a> 
+                            <a href=""><i class="fa-solid fa-trash icone"></i></a> 
                         </div>
                     </div>
                 </div>
             {% endfor %}
 
-            <a href="" class="add">
+            <a href="{{ path('add_proj') }}" class="add">
                 <p>+</p>
             </a>
         </div>

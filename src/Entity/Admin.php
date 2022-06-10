@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AdminRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -32,6 +34,14 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255)]
     private $photo;
+
+    #[ORM\OneToMany(mappedBy: 'Admin', targetEntity: Projetsexam::class)]
+    private $projetsexams;
+
+    public function __construct()
+    {
+        $this->projetsexams = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -134,6 +144,36 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Projetsexam>
+     */
+    public function getProjetsexams(): Collection
+    {
+        return $this->projetsexams;
+    }
+
+    public function addProjetsexam(Projetsexam $projetsexam): self
+    {
+        if (!$this->projetsexams->contains($projetsexam)) {
+            $this->projetsexams[] = $projetsexam;
+            $projetsexam->setAdmin($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProjetsexam(Projetsexam $projetsexam): self
+    {
+        if ($this->projetsexams->removeElement($projetsexam)) {
+            // set the owning side to null (unless already changed)
+            if ($projetsexam->getAdmin() === $this) {
+                $projetsexam->setAdmin(null);
+            }
+        }
 
         return $this;
     }
