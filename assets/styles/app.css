@@ -526,12 +526,28 @@ i {
     width: 100%;
 }
 
-/* Ajout */
+/* crud */
 
 .success {
     background-color: lightgreen;
     border: 1px solid green;
     color: green;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.update {
+    background-color: lightblue;
+    border: 1px solid blue;
+    color: blue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.delete {
+    background-color: lightcoral;
+    border: 1px solid red;
+    color: red;
     padding: 10px;
     border-radius: 5px;
 }

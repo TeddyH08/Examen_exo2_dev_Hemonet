@@ -32,7 +32,7 @@
                 $manager->flush();
 
                 $this->addFlash(
-                    'success',
+                    'update',
                     'L\'utilisateur a bien été modifié.'
                 );
 

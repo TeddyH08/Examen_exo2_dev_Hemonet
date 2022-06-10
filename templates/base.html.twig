@@ -33,6 +33,7 @@
                                 <a href="{{ path('index') }}#projets">Liste des projets</a>
                             </div>
 
+                            {% if app.user %}
                                 <div class="categorie dropdown">
                                     <a href="{{ path('admin') }}">Admin</a>
                                 </div>
@@ -40,6 +41,7 @@
                                 <div class="categorie dropdown">
                                     <a href="{{ path('connexion.logout') }}">Se déconnecter</a>
                                 </div>
+                            {% endif %}
                         </div>
 
                         <div class="right_nav">

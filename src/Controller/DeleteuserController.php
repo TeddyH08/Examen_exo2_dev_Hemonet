@@ -22,7 +22,7 @@
             $manager->flush();
 
             $this->addFlash(
-                'success',
+                'delete',
                 'L\'utilisateur a bien été supprimé.'
             );
 
