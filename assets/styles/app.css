@@ -480,6 +480,7 @@ i {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     width: 90%;
     margin: 20px 0;
 }
@@ -494,6 +495,7 @@ i {
     padding-bottom: 10px;
     font-size: 75%;
     border-radius: 10px;
+    margin: 20px 0;
 }
 
 .proj_img {
@@ -627,6 +629,9 @@ i {
         width: 100%;
     }
     .cards_projects {
+        width: 35%;
+    }
+    .card_project {
         width: 35%;
     }
 }
