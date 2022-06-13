@@ -10,6 +10,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class AddProjType extends AbstractType
 {
@@ -25,10 +26,10 @@ class AddProjType extends AbstractType
                     'class' => 'form_content_label'
                 ]
             ])
-            ->add('image', TextType::class, [
-                'label' => "Image du site (fond.png par défaut)",
-                'data' => "fond.png"
-            ])
+            ->add('imageFile', VichImageType::class, [
+                    'label' => "Image du site (1920*945)",
+                    'required' => false
+                ])
             ->add('link', TextType::class, [
                 'attr' => [
                     'class' => 'form_content_input'

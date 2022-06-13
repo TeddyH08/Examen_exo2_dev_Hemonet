@@ -405,6 +405,7 @@ i {
     background-color: #FFF6EB;
     padding: 20px;
     border-radius: 10px;
+    width: 50%;
 }
 
 /* Page admin */
@@ -564,6 +565,10 @@ i {
     padding: 10px;
     width: 20%;
     border-radius: 5px;
+}
+
+.vich-image a img {
+    width: 100%;
 }
 
 /* Hover */
