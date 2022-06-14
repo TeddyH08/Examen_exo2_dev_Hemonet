@@ -14,3 +14,5 @@ import './bootstrap';
 import './js/responsive';
 
 import './js/back_to_top';
+
+import './js/components/map';

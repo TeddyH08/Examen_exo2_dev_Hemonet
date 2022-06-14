@@ -2,14 +2,19 @@
 
 namespace App\Entity;
 
-use App\Repository\AdminRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use App\Repository\AdminRepository;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: AdminRepository::class)]
+#[Vich\Uploadable]
 class Admin implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -19,6 +24,9 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
+
+    #[Vich\UploadableField(mapping: 'photo', fileNameProperty: 'photo')]
+    private ?File $photoFile = null;
 
     #[ORM\Column(type: 'json')]
     private $roles = [];
@@ -136,12 +144,27 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $photoFile
+     */
+    public function setPhotoFile(?File $photoFile = null) {
+        $this->photoFile = $photoFile;
+
+        if (null !== $photoFile) {
+            $this->updateAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getPhotoFile(): ?File {
+        return $this->photoFile;
+    }
+
     public function getPhoto(): ?string
     {
         return $this->photo;
     }
 
-    public function setPhoto(string $photo): self
+    public function setPhoto($photo): self
     {
         $this->photo = $photo;
 

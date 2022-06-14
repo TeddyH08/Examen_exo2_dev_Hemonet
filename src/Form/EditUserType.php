@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Admin;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -42,8 +43,9 @@ class EditUserType extends AbstractType
                 'class' => 'form_content_label'
             ]
         ])
-        ->add('photo', TextType::class, [
-            'label' => "Image de profil (user.png par défaut)",
+        ->add('photoFile', VichImageType::class, [
+            'label' => "Photo de profil",
+            'required' => false
         ])
         ->add('submit', SubmitType::class, [
             'attr' => [

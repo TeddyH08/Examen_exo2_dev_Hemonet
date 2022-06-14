@@ -24,12 +24,10 @@ class AddProjType extends AbstractType
                 'label' => 'Nom du projet',
                 'label_attr' => [
                     'class' => 'form_content_label'
-                ],
-                'required' => false
+                ]
             ])
             ->add('imageFile', VichImageType::class, [
-                'label' => "Image du site (1920*945)",
-                'required' => false
+                'label' => "Image du site (1920*945)"
                 ])
             ->add('link', TextType::class, [
                 'attr' => [
@@ -57,8 +55,7 @@ class AddProjType extends AbstractType
                 'class' => Admin::class,
                 'choice_label' => 'email',
                 'label' => 'Créateur',
-                'placeholder' => '-- Choisir un utilisateur --',
-                'required' => false
+                'placeholder' => '-- Choisir un utilisateur --'
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [

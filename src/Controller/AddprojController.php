@@ -29,14 +29,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
             $form->handleRequest($request);
             if($form->isSubmitted() && $form->isValid()) {
 
-                if ($_POST["add_proj_name"] == null) {
-                    $this->addFlash(
-                        'error',
-                        'Vous devez ajouter un nom de projet.'
-                    );
-                    return $this->redirectToRoute('add_proj');
-                }
-
                 $manager->persist($projs);
                 $manager->flush();
 
