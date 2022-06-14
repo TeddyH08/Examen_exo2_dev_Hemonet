@@ -9,7 +9,8 @@
     use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Component\HttpFoundation\Request;
     use Doctrine\ORM\EntityManagerInterface;
-    use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
     class EdituserController extends AbstractController {
 
@@ -17,6 +18,7 @@
          * @Route("/edit_user/{id}", name="edit_user")
          * @return Response
          */
+        #[IsGranted('ROLE_ADMIN')]
         public function edit(
             Admin $users,
             Request $request,

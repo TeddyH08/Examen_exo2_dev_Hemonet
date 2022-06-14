@@ -9,6 +9,7 @@
     use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Component\HttpFoundation\Request;
     use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
     class EditprojetController extends AbstractController {
 
@@ -16,6 +17,7 @@
          * @Route("/edit_projet/{id}", name="edit_projet")
          * @return Response
          */
+        #[IsGranted('ROLE_ADMIN')]
         public function edit(
             Projetsexam $projets,
             Request $request,

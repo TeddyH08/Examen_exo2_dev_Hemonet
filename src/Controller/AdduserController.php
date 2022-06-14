@@ -5,7 +5,8 @@
     use App\Entity\Admin;
     use App\Form\AddUserType;
     use Doctrine\ORM\EntityManagerInterface;
-    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -16,6 +17,7 @@
          * @Route("/add_user", name="add_user")
          * @return Response
          */
+        #[IsGranted('ROLE_ADMIN')]
         public function index(
             Request $request,
             EntityManagerInterface $manager,

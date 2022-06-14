@@ -5,7 +5,8 @@
     use App\Entity\Projetsexam;
     use App\Form\AddProjType;
     use Doctrine\ORM\EntityManagerInterface;
-    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\Routing\Annotation\Route;
@@ -15,6 +16,7 @@
          * @Route("/add_proj", name="add_proj")
          * @return Response
          */
+        #[IsGranted('ROLE_ADMIN')]
         public function index(
             Request $request,
             EntityManagerInterface $manager,
@@ -26,6 +28,14 @@
 
             $form->handleRequest($request);
             if($form->isSubmitted() && $form->isValid()) {
+
+                if ($_POST["add_proj_name"] == null) {
+                    $this->addFlash(
+                        'error',
+                        'Vous devez ajouter un nom de projet.'
+                    );
+                    return $this->redirectToRoute('add_proj');
+                }
 
                 $manager->persist($projs);
                 $manager->flush();

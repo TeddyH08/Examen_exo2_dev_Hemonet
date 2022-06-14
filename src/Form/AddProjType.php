@@ -24,11 +24,12 @@ class AddProjType extends AbstractType
                 'label' => 'Nom du projet',
                 'label_attr' => [
                     'class' => 'form_content_label'
-                ]
+                ],
+                'required' => false
             ])
             ->add('imageFile', VichImageType::class, [
-                    'label' => "Image du site (1920*945)",
-                    'required' => false
+                'label' => "Image du site (1920*945)",
+                'required' => false
                 ])
             ->add('link', TextType::class, [
                 'attr' => [
@@ -38,7 +39,8 @@ class AddProjType extends AbstractType
                 'label_attr' => [
                     'class' => 'form_content_label'
                 ],
-                'data' => "#"
+                'data' => "#",
+                'required' => false
             ])
             ->add('github', TextType::class, [
                 'attr' => [
@@ -48,13 +50,15 @@ class AddProjType extends AbstractType
                 'label_attr' => [
                     'class' => 'form_content_label'
                 ],
-                'data' => "#"
+                'data' => "#",
+                'required' => false
             ])
             ->add('Admin',  EntityType::class, [
                 'class' => Admin::class,
                 'choice_label' => 'email',
                 'label' => 'Créateur',
                 'placeholder' => '-- Choisir un utilisateur --',
+                'required' => false
             ])
             ->add('submit', SubmitType::class, [
                 'attr' => [

@@ -4,6 +4,12 @@
     <div class="connexion_container">
         <h2 class="title_container">Ajout d'un projet</h2>
 
+        {% for message in app.flashes('error') %}
+            <div class="error">
+                {{ message }}
+            </div>
+        {% endfor %}
+
         <div class="connexion_form">
             {{ form(form) }}
         </div>

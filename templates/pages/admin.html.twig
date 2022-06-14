@@ -79,6 +79,10 @@
                             <a href="{{ path('delete_projet', { id: projet.id }) }}"><i class="fa-solid fa-trash icone"></i></a> 
                         </div>
                     </div>
+
+                    <div class="pdf_make">
+                        <a href="{{ path('project_data', { id: projet.id }) }}"><i class="fa-solid fa-download icone"></i></a>
+                    </div>
                 </div>
             {% endfor %}
 
